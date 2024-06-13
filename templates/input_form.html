@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="../static/css/style.forms.css">
+<title>Transliterate-video</title>
+{% endblock %}
+
+{% block content %}
+<h1 class="heading">Video Translation</h1>
+<div class="io-container">
+    <div class="form-input">
+        <form class="grid" method="POST" action="#">
+            <label>Input Youtube URL: </label>
+            <input type="text" placeholder="Youtube URL..." id="youtube-url" name="youtube-url"/>
+            <button id="run" type="submit">Run</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

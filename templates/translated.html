@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="../static/css/style.forms.css">
+<title>Translated</title>
+{% endblock %}
+
+{% block content %}
+<h1 class="heading">Video Translation</h1>
+<div class="io-container">
+    <br>
+    <br>
+    <iframe width="670" height="400" src="https://www.youtube.com/embed/{{ url }}?autoplay=1" frameborder="1px" allowfullscreen allow="autoplay"></iframe>
+    <div class="form-output">
+        <h1>Hello</h1>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="../static/css/style.index.css">
+<title>Home Page</title>
+{% endblock %}
+
+{% block content %}
+<section class="header">
+    <nav>
+        <img src="../static/images/vnuk_logo.png" alt="">
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="/">HOME</a></li>
+                <li><a href="#contact-us">CONTACT US</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+    <div class="text-box">
+        <br> <br>
+        <h1>Welcome to VNUK-SIGNED!</h1><br>
+
+        <a href="/input_form" class="hero-btn">Translate Now</a><br><br>
+        <p>
+            Effortless Real-Time Sign Language Subtitle Translate for English Video <br>
+        </p>
+    </div>
+
+
+</section>
+
+<!-----------JavaScript for Toggle menu - Stackoverflow---------->
+<script>
+
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu() {
+        navLinks.style.right = "0";
+    }
+    function hideMenu() {
+        navLinks.style.right = "-200px";
+    }
+</script>
+
+<section class="footer" id="contact-us">
+    <h4>About Us</h4>
+    <p>Greetings! We are <a href="https://github.com/MinhHieu-Nguyen-dn">Hieu Nguyen</a> and <a href="https://github.com/DavidTram0311">Dat Tram</a>,<br>Senior at VNUK Institute for research and Executive Education.</p>
+
+
+</section>
+
+{% endblock %}
