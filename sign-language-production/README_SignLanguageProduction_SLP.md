@@ -8,3 +8,8 @@ More details of the project:
 - py-trans
 - nmt (neural machine translation) glosser
 - Pose lookup (to map gloss to pose) and smoothing (concatenate + smoothen)
+
+Usage from terminal in `sign-language-production` directory:  
+```
+(TO BE UDPATED)
+```
