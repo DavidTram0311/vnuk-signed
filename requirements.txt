@@ -1,0 +1,15 @@
+py-trans==0.6.1
+aiofiles==23.2.1
+# Check internal_dev_notes.md to install CUDA first, then PyTorch
+numpy==1.24.1
+torch-2.3.1+cu121
+torchvision-0.18.1+cu121
+setuptools==70.1.0
+spacy==3.7.5
+tqdm==4.66.4
+datasets==2.20.0
+evaluate==0.4.2
+torchtext==0.18.0
+pose-format==0.4.1
+simplemma==1.0.0
+matplotlib==3.7.5

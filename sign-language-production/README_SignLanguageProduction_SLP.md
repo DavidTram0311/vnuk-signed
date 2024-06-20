@@ -10,6 +10,6 @@ More details of the project:
 - Pose lookup (to map gloss to pose) and smoothing (concatenate + smoothen)
 
 Usage from terminal in `sign-language-production` directory:  
-```
-(TO BE UDPATED)
+```python
+# TODO: update this
 ```
