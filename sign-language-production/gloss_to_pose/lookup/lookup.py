@@ -2,7 +2,7 @@ import os
 from collections import defaultdict
 from typing import List
 from pose_format import Pose
-from ...text_to_gloss.types import Gloss
+from ...text_to_gloss.custom_types import Gloss
 
 
 def make_dictionary_index(rows: List, based_on: str):

@@ -1,7 +1,7 @@
 from pose_format import Pose
 from .concatenate import concatenate_poses
 from .lookup import CSVPoseLookup
-from ..text_to_gloss.types import Gloss
+from ..text_to_gloss.custom_types import Gloss
 
 
 def gloss_to_pose(glosses: Gloss,

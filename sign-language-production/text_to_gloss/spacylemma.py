@@ -1,4 +1,4 @@
-from .types import Gloss
+from .custom_types import Gloss
 from .common import load_spacy_model
 
 
