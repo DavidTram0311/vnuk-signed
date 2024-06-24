@@ -1,41 +1,30 @@
 from flask import Flask, render_template, request, redirect, url_for
-import time
-from pose_format import Pose
-from pose_format.pose_visualizer import PoseVisualizer
 import os
 import shutil
-from youtube_transcript_api import YouTubeTranscriptApi
+from utils import *
 
 app = Flask(__name__)
 
 start = time.time()
 
-def subtitle(video_id):
-    '''
-    This function retrieve full subtitle in the youtube video
-    input: video_id
-    output: string (subtitle)
-    '''
-    transcript = YouTubeTranscriptApi.get_transcript(video_id)
-    output = ''
-    for x in transcript:
-        sentence = x['text']
-        output += f' {sentence}'
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
+
 @app.route('/input_form', methods=['POST', 'GET'])
 def input_form():
     if request.method == 'POST':
         url = request.form['youtube-url']
-        url = url.replace('https://www.youtube.com/watch?v=', '')
-        print(url)
+        url = url.replace('https://www.youtube.com/watch?v=', '') # get only the ID of the video
+        print("YouTube video ID = {}".format(url))
+
         if url:
-            folder = "static/images/gif"
-            for filename in os.listdir(folder):
-                file_path = os.path.join(folder, filename)
+            gif_dir = "static/images/gif"
+            # delete all files in the gif_dir gif (results of previous runtime)
+            for filename in os.listdir(gif_dir):
+                file_path = os.path.join(gif_dir, filename)
                 try:
                     if os.path.isfile(file_path) or os.path.islink(file_path):
                         os.unlink(file_path)
@@ -43,10 +32,10 @@ def input_form():
                         shutil.rmtree(file_path)
                 except Exception as e:
                     print('Failed to delete %s. Reason: %s' % (file_path, e))
-            with open(f"assets/pose/{}.pose", "rb") as f:
-                pose = Pose.read(f.read())
-            v = PoseVisualizer(pose)
-            v.save_gif("static/images/gif/pose.gif", v.draw())
+
+            # create a pose GIF for the video subtitle string
+            subtitle_string = subtitle(url)
+            create_gif(subtitle_string=subtitle_string, gif_dir=gif_dir)
             return redirect(url_for("translated", url=url))
     return render_template('input_form.html')
 
@@ -54,7 +43,6 @@ def input_form():
 @app.route('/translated/<url>')
 def translated(url):
     return render_template('translated.html', url=url)
-
 
 
 if __name__ == '__main__':
