@@ -2,7 +2,7 @@ import os
 from collections import defaultdict
 from typing import List
 from pose_format import Pose
-from ...text_to_gloss.custom_types import Gloss
+from ..custom_types import Gloss
 
 
 def make_dictionary_index(rows: List, based_on: str):
@@ -16,7 +16,7 @@ def make_dictionary_index(rows: List, based_on: str):
     languages_dict = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
     for d in rows:
         lower_term = d[based_on].lower()
-        languages_dict[d['spoken_language']][d['signed_language']][lower_term].append({
+        languages_dict[d['spokenLanguage']][d['signedLanguage']][lower_term].append({
             "path": d['path']
         })
     return languages_dict
@@ -27,7 +27,7 @@ class PoseLookup:
     Base class for looking up poses based on glosses
     """
     def __init__(self, rows: List, lexicon_directory: str = None):
-        self.directory = lexicon_directory
+        self.lexicon_directory = lexicon_directory
         self.words_index = make_dictionary_index(rows, based_on="words")
         self.glosses_index = make_dictionary_index(rows, based_on="glosses")
 

@@ -12,4 +12,4 @@ class CSVPoseLookup(PoseLookup):
         with open(os.path.join(lexicon_directory, 'index.csv'), mode='r', encoding='utf-8') as f:
             rows = list(csv.DictReader(f))
 
-        super().__init__(rows=rows, directory=lexicon_directory)
+        super().__init__(rows=rows, lexicon_directory=lexicon_directory)
