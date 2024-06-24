@@ -9,7 +9,7 @@ torchtext.disable_torchtext_deprecation_warning()
 from torchtext import vocab
 from .models import *
 from .support_funcs import *
-from .types import Gloss
+from .custom_types import Gloss
 from .spacylemma import LANGUAGE_MODELS_SPACY
 from .common import load_spacy_model
 

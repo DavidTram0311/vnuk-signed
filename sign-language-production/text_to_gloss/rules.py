@@ -8,7 +8,7 @@ This rule-based module is used to extract glosses from a sentence in a specific 
 import sys
 from typing import Dict, List, Tuple
 from .common import load_spacy_model
-from .types import Gloss
+from .custom_types import Gloss
 
 LANGUAGE_MODELS_RULES = {
     "de": "de_core_news_lg",
