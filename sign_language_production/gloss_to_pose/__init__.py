@@ -19,7 +19,7 @@ def gloss_to_pose(glosses: Gloss,
     :return: a single Pose object that represents the input sequence of poses
     """
     # TODO: double check os directory for the lexicon directory
-    lexicon_directory = os.path.join("gloss_to_pose/datasets", lexicon_dataset)
+    lexicon_directory = os.path.join("sign_language_production/gloss_to_pose/datasets", lexicon_dataset)
     pose_lookup = CSVPoseLookup(lexicon_directory)
     # Transform the list of glosses into a list of poses
     poses = pose_lookup.lookup_sequence(glosses, spoken_language, signed_language)
