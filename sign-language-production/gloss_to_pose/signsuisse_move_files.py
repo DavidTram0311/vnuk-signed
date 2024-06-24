@@ -2,19 +2,22 @@ import pandas as pd
 import os
 import shutil
 
-os.chdir("signsuisse")
-df = pd.read_csv("signsuisse/index_German_SwissGermanSL.csv")
+df = pd.read_csv("datasets/signsuisse/index.csv")
 
 # Get the "id" column as a list
 id_list = df["id"].tolist()
 
 # Check if the "de_dsgs_poses" folder exists, if not create it
-if not os.path.exists("signsuisse/de_dsgs_poses"):
-    os.makedirs("signsuisse/de_dsgs_poses")
+if not os.path.exists("datasets/signsuisse/de_dsgs_poses"):
+    os.makedirs("datasets/signsuisse/de_dsgs_poses")
 
 # path to "openpose.v1.0/openpose" folder
-openpose_folder_path = "E:\projects\graduation\spoken2signed\spoken-to-signed-translation\\assets\signsuisse\openpose"
-destination = "de_dsgs_poses"
+# openpose_folder_path = "E:\projects\graduation\spoken2signed\spoken-to-signed-translation\\assets\signsuisse\openpose"
+
+# path to "example_mediapipe" folder
+openpose_folder_path = "E:\projects\graduation\spoken2signed\spoken-to-signed-translation\\assets\signsuisse\example_mediapipe"
+
+destination = "datasets/signsuisse/de_dsgs_poses"
 
 # Iterate over the id_list and get the corresponding .pose files
 for pose_id in id_list:
