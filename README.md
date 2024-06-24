@@ -35,3 +35,11 @@ text_to_pose_and_gif(
 ```
 
 ## GUI pipeline: (to be updated)
+(internal dev notes) In terminal, branch main  
+```commandline
+git checkout update-webapp-response
+```
+#### Update tasks - Priority order:
+1. Loading sign: inform user to wait for GIF generation
+2. Auto-play YouTube video whenever reloading page
+3. GIF at the center of its container
