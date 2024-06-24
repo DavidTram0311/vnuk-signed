@@ -20,10 +20,19 @@ python app.py
 ├── templates
 │   ├── index.html
 │   ├── input_form.html
-│   └── translated.html
+│   ├── translated.html
+|   └── base.html
+|
 ├── static
+|   ├── css
+|       ├── style.forms.css
+|       └── style.index.css
 │   └── images
-│       └── gif
+│       ├── gif
+|           └── {output_pose}.gif
+|       ├── asl.jpg
+|       └── vnuk_logo.png
+|
 ├── assets
 │   └── pose
 │       └── your_pose_file.pose
