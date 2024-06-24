@@ -16,10 +16,11 @@
         padding: 2%;
     }
 }
+
 .io-container {
     text-align: center;
     display: flex;
-    }
+}
 
 @media only screen and (max-width: 600px) {
     .io-container {
@@ -39,47 +40,52 @@
 
 
 * {
-  padding: 5px;
-  margin: 10px;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+    padding: 5px;
+    margin: 10px;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
+
 body {
-  background-color: #ffc13d;
+    background-color: #ffc13d;
 }
-.form-input  {
-  width: 31.25em;
-  background-color: #f8f8f8;
-  padding: 5em 3.75em;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-  border-radius: 0.7em;
-  box-shadow: 0 1em 4em rgba(71, 50, 4, 0.3);
+
+.form-input {
+    width: 31.25em;
+    background-color: #f8f8f8;
+    padding: 5em 3.75em;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 0.7em;
+    box-shadow: 0 1em 4em rgba(71, 50, 4, 0.3);
 }
+
 input,
 #submit {
-  border: none;
-  outline: none;
-  display: block;
+    border: none;
+    outline: none;
+    display: block;
 }
+
 input {
-  width: 100%;
-  background-color: transparent;
-  margin-bottom: 2em;
-  padding: 1em 0 0.5em 0.5em;
-  border-bottom: 2px solid #202020;
+    width: 100%;
+    background-color: transparent;
+    margin-bottom: 2em;
+    padding: 1em 0 0.5em 0.5em;
+    border-bottom: 2px solid #202020;
 }
+
 #run {
-  position: relative;
-  left: 0;
-  font-size: 1.1em;
-  width: 7em;
-  background-color: #ffc13d;
-  padding: 0.8em 0;
-  margin-top: 2em;
-  border-radius: 0.3em;
+    position: relative;
+    left: 0;
+    font-size: 1.1em;
+    width: 7em;
+    background-color: #ffc13d;
+    padding: 0.8em 0;
+    margin-top: 2em;
+    border-radius: 0.3em;
 }
 
 .form-video {
@@ -89,8 +95,8 @@ input {
 
 .form-output {
     display: inline-block;
-    width:670px;
-    height:600px;
+    width: 670px;
+    height: 600px;
     border: 1px solid;
 }
 
