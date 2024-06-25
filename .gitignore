@@ -5,5 +5,5 @@ sign_language_production/gloss_to_pose/datasets/signsuisse
 sign_language_production/gloss_to_pose/datasets/signsuisse/*
 *.pose
 *.gif
-static/images/gif
+static/images/gif/*
 assets
