@@ -22,6 +22,9 @@ def input_form():
 
         if url:
             gif_dir = "static/images/gif"
+            # Ensure gif_dir exists
+            if not os.path.exists(gif_dir):
+                os.makedirs(gif_dir)
             # delete all files in the gif_dir gif (results of previous runtime)
             for filename in os.listdir(gif_dir):
                 file_path = os.path.join(gif_dir, filename)
