@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block head %}
 <link rel="stylesheet" href="../static/css/style.forms.css">
+<script src="../static/js/script.js" defer></script>
 <title>Translated</title>
 {% endblock %}
 
@@ -12,5 +13,10 @@
     <iframe width="700" height="500" src="https://www.youtube.com/embed/{{ url }}?autoplay=1" frameborder="1px"
             allowfullscreen allow="autoplay"></iframe>
     <img src="../static/images/gif/pose.gif" width="450" height="500" alt="gif">
+</div>
+
+<div class="loader-container">
+    <div class="loader"></div>
+    <div class="loader-text">Waiting for Gif generation...</div>
 </div>
 {% endblock %}
