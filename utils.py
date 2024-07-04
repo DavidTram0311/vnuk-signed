@@ -18,7 +18,7 @@ def subtitle(video_id):
     return output
 
 
-def create_gif(subtitle_string: str, gif_dir="static/images/gif/pose.gif"):
+def create_gif(subtitle_string: str, gif_dir: str, url: str):
     """
     This function creates a GIF file from a subtitle string.
     :param gif_dir: directory to save the GIF file
@@ -29,7 +29,7 @@ def create_gif(subtitle_string: str, gif_dir="static/images/gif/pose.gif"):
     # time_now = time.strftime("%Y%m%d-%H%M%S")
     text_to_pose_and_gif(
         text_input=subtitle_string,
-        pose_filename="pose.pose",
+        pose_filename=f"{url}.pose",
         pose_dir="assets/pose",
         gif_dir=gif_dir,
         target_language="de",
