@@ -42,7 +42,6 @@
 
 * {
     padding: 5px;
-    margin: 10px;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
@@ -122,6 +121,21 @@ input {
     font-size: 18px;
     color: #333;
 }
+
+.gif {
+    margin-top: -10px;
+    justify-content: center;
+}
+
+button {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #ffc13d;
+}
+
 
 
 @keyframes loading {
