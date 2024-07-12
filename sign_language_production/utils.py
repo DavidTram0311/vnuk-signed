@@ -14,6 +14,7 @@ def resize_and_generate_gif(poses_sequence, gif_name, gif_dir="."):
     Returns:
         None
     """
+    print("Resizing poses for visualization...")
     # Resize to 256, for visualization speed
     scale = poses_sequence.header.dimensions.width / 256
     poses_sequence.header.dimensions.width = int(poses_sequence.header.dimensions.width / scale)
@@ -25,7 +26,9 @@ def resize_and_generate_gif(poses_sequence, gif_name, gif_dir="."):
         os.makedirs(gif_dir)
 
     # Derive gif file name
+    print("Generating GIF from poses sequence...")
     gif_file_path = os.path.join(gif_dir, gif_name)
     v = PoseVisualizer(poses_sequence)
+    print("GIF created, saving...")
     v.save_gif(gif_file_path, v.draw())
     print("GIF saved at:", gif_file_path)
