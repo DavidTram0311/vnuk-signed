@@ -21,6 +21,7 @@ def subtitle(video_id):
 def create_gif(subtitle_string: str, gif_dir: str, url: str):
     """
     This function creates a GIF file from a subtitle string.
+    :param url: url of the YouTube video passed in - used as filename later
     :param gif_dir: directory to save the GIF file
     :param subtitle_string: string of the subtitle
     :return: None

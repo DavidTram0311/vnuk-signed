@@ -3,7 +3,3 @@ __pycache__
 temp_files
 sign_language_production/gloss_to_pose/datasets/signsuisse
 sign_language_production/gloss_to_pose/datasets/signsuisse/*
-*.pose
-*.gif
-static/images/gif/*
-assets
