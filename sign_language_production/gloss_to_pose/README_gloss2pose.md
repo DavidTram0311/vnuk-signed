@@ -12,5 +12,4 @@ It should contain a index.csv file with the following structure:
 ```csv
 path,spoken_language,signed_language,start,end,words,glosses,priority
 ```
-  and a folder `folder_name` containing the .pose files.
-  
+  and a folder containing the .pose files (prepared previously).

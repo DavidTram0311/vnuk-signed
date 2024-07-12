@@ -3,6 +3,7 @@ from text_to_gloss import text2gloss_module
 from gloss_to_pose import gloss_to_pose
 from text_translate import translate_text
 from .utils import resize_and_generate_gif
+from .utils import download_dataset
 
 
 def text_to_pose_and_gif(text_input, pose_filename, pose_dir, gif_dir, target_language="de", translator_machine="google",
@@ -38,6 +39,8 @@ def text_to_pose_and_gif(text_input, pose_filename, pose_dir, gif_dir, target_la
     print("Checkpoint 2 - text to gloss: DONE")
 
     # Step 3: Convert gloss to pose sequence
+    # TODO: Check if lexicon_dataset is available, if not download and place it in the correct directory
+    download_dataset(dataset_name=lexicon_dataset)
     poses_sequence = gloss_to_pose(glosses=glosses, lexicon_dataset=lexicon_dataset, spoken_language=target_language,
                                    signed_language=signed_language)
 

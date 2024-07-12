@@ -1,4 +1,6 @@
 import os
+import urllib.request
+import zipfile
 from pose_format.pose_visualizer import PoseVisualizer
 
 
@@ -29,3 +31,37 @@ def resize_and_generate_gif(poses_sequence, gif_name, gif_dir="."):
     v = PoseVisualizer(poses_sequence)
     v.save_gif(gif_file_path, v.draw())
     print("GIF saved at:", gif_file_path)
+
+
+# TODO: Prepare/Download the dataset function
+def download_dataset(dataset_name, dataset_dir="gloss_to_pose/datasets"):
+    """
+    Downloads a dataset zip file from a given URL and saves it to the specified directory.
+    :param dataset_dir:
+    :param dataset_name:
+    :return:
+    """
+    urls_dict = {
+        "signsuisse": "https://drive.usercontent.google.com/download?id=1sVEASYo7CRQ1xfaXgPO8Mg1r4Hpux-vh&export=download",
+        "vietsign": ""
+    }
+
+    dataset_path = os.path.join(dataset_dir, dataset_name)
+    # Check if the dataset is ready
+    if os.path.exists(dataset_path):
+        print(f"Dataset {dataset_name} is already downloaded.")
+        return
+
+    print("Dataset {} not found. It might take a while to prepare the dataset.".format(dataset_name))
+    # Ensure the directory exists
+    os.makedirs(dataset_dir, exist_ok=True)
+    dataset_url = urls_dict[dataset_name]
+    dataset_zippath = os.path.join(dataset_dir, f"{dataset_name}.zip")
+    # Download the dataset ZIP file
+    print('Downloading {} dataset...'.format(dataset_name))
+    urllib.request.urlretrieve(dataset_url, dataset_zippath)
+    print('Dataset {} downloaded. Now unzipping...'.format(dataset_name))
+    # Unzip the dataset
+    with zipfile.ZipFile(dataset_zippath, 'r') as zip_ref:
+        zip_ref.extractall(os.path.join(dataset_path))
+    print('Dataset {} unzipped.'.format(dataset_name))

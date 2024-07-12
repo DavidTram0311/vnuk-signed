@@ -4,6 +4,7 @@ from gloss_to_pose import gloss_to_pose
 from text_translate import translate_text
 import os
 from utils import resize_and_generate_gif
+from utils import download_dataset
 
 
 def translate_text_input(text_input, target_language, translator_machine):
@@ -46,6 +47,7 @@ def main(args):
     print("Checkpoint 2 - text to gloss: DONE")
 
     # Step 3: Convert gloss to pose sequence
+    download_dataset(dataset_name=args.lexicon_dataset)
     poses_sequence = convert_gloss_to_pose(glosses, args.lexicon_dataset, args.target_language, args.signed_language)
 
     # Save poses sequence to a .pose file
