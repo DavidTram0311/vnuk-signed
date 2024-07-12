@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, send_file
 import os
 import shutil
 from utils import *
@@ -25,20 +25,14 @@ def input_form():
             # Ensure gif_dir exists
             if not os.path.exists(gif_dir):
                 os.makedirs(gif_dir)
-            # delete all files in the gif_dir gif (results of previous runtime)
-            for filename in os.listdir(gif_dir):
-                file_path = os.path.join(gif_dir, filename)
-                try:
-                    if os.path.isfile(file_path) or os.path.islink(file_path):
-                        os.unlink(file_path)
-                    elif os.path.isdir(file_path):
-                        shutil.rmtree(file_path)
-                except Exception as e:
-                    print('Failed to delete %s. Reason: %s' % (file_path, e))
+            # Check video id in the folder gif
+            files = os.listdir(gif_dir)
+            if f"{url}.gif" in files:
+                return redirect(url_for("translated", url=url))
 
-            # create a pose GIF for the video subtitle string
+            # create a pose GIF for the video subtitle string, if video id not in the folder gif
             subtitle_string = subtitle(url)
-            create_gif(subtitle_string=subtitle_string, gif_dir=gif_dir)
+            create_gif(subtitle_string=subtitle_string, gif_dir=f"static/images/gif", url=url)
             return redirect(url_for("translated", url=url))
     return render_template('input_form.html')
 

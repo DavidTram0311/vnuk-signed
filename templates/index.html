@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block head %}
 <link rel="stylesheet" href="../static/css/style.index.css">
-<title>Home Page</title>
+<title>(VNUK-SIGNED) Home</title>
 {% endblock %}
 
 {% block content %}
@@ -11,8 +11,9 @@
         <div class="nav-links" id="navLinks">
             <i class="fa fa-times" onclick="hideMenu()"></i>
             <ul>
-                <li><a href="/">HOME</a></li>
-                <li><a href="#contact-us">CONTACT US</a></li>
+                <li><a href="/" style="font-size: 16px">HOME</a></li>
+                <li><a href="#contact-us" style="font-size: 16px">CONTACT US</a></li>
+                <li><a href="#demo" style="font-size: 16px">INSTRUCTION</a></li>
             </ul>
         </div>
         <i class="fa fa-bars" onclick="showMenu()"></i>
@@ -22,13 +23,25 @@
         <br> <br>
         <h1>Welcome to VNUK-SIGNED!</h1><br>
 
-        <a href="/input_form" class="hero-btn">Translate Now</a><br><br>
-        <p>
+        <a href="/input_form" class="hero-btn" style="font-size: 16px">Translate Now</a><br><br>
+        <p style="font-size: 20px">
             Effortless Real-Time Sign Language Subtitle Translate for English Video <br>
         </p>
     </div>
 
 
+</section>
+
+<section id="demo">
+    <h1>INSTRUCTION</h1>
+    <p>
+        How to use this application? Watch the video:
+    </p>
+    <div class="vid">
+        <video width="840" height="680" controls>
+            <source src="../static/images/Demo.mp4" type="video/mp4">
+        </video>
+    </div>
 </section>
 
 <!-----------JavaScript for Toggle menu - Stackoverflow---------->
@@ -47,9 +60,10 @@
 
 <section class="footer" id="contact-us">
     <h4>About Us</h4>
-    <p>Greetings! We are <a href="https://github.com/MinhHieu-Nguyen-dn">Hieu Nguyen</a> and <a
-            href="https://github.com/DavidTram0311">Dat Tram</a>,<br>Senior at VNUK Institute for research and Executive
-        Education.</p>
+    <p>Greetings! We are <a href="https://github.com/MinhHieu-Nguyen-dn">Hieu Nguyen</a> and
+        <a href="https://github.com/DavidTram0311">Dat Tram</a>
+        <br>Senior Data Science students at <a href="https://vnuk.edu.vn/">VNUK Institute for Research and Executive Education</a>
+        <br>This is our graduation project to support the Deaf Community to understand YouTube content.</p>
 
 
 </section>

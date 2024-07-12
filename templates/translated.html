@@ -2,7 +2,7 @@
 {% block head %}
 <link rel="stylesheet" href="../static/css/style.forms.css">
 <script src="../static/js/script.js" defer></script>
-<title>Translated</title>
+<title>(VNUK-SIGNED) Watch</title>
 {% endblock %}
 
 {% block content %}
@@ -12,8 +12,16 @@
     <br>
     <iframe width="700" height="500" src="https://www.youtube.com/embed/{{ url }}?autoplay=1" frameborder="1px"
             allowfullscreen allow="autoplay"></iframe>
-    <img src="../static/images/gif/pose.gif" width="450" height="500" alt="gif">
+    <div class="gif">
+        <img src="../static/images/gif/{{ url }}.gif" width="500" height="510" alt="gif">
+        <br>
+        <a href="../static/images/gif/{{ url }}.gif" download>
+            <button>Download GIF</button>
+        </a>
+    </div>
+
 </div>
+
 
 <div class="loader-container">
     <div class="loader"></div>
