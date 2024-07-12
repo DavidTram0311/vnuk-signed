@@ -1,5 +1,6 @@
 __pycache__
 *.pt
+assets
 temp_files
 sign_language_production/gloss_to_pose/datasets/signsuisse
 sign_language_production/gloss_to_pose/datasets/signsuisse/*
