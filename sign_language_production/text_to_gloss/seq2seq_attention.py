@@ -1,8 +1,6 @@
+import urllib.request
 import os
-import random
 import torch
-import numpy as np
-import spacy
 import datasets
 import torchtext;
 torchtext.disable_torchtext_deprecation_warning()
@@ -79,9 +77,28 @@ def text_to_gloss(text: str, language: str = "en") -> Gloss:
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
     # Define paths for saved components
-    VOCAB_PATH = os.path.join(BASE_DIR, 'aslg-pc12-vocab.pt')
-    MODEL_PATH = os.path.join(BASE_DIR, 'text2gloss-aslg_pc12-model-03-batch32.pt')
-    # TODO: Dynamic path for the model and vocab
+    vocab_filename = 'aslg-pc12-vocab.pt'
+    model_filename = 'text2gloss-aslg_pc12-model-03-batch32.pt'
+    VOCAB_PATH = os.path.join(BASE_DIR, vocab_filename)
+    MODEL_PATH = os.path.join(BASE_DIR, model_filename)
+
+    # Check if vocab and model weight files exist, download if not
+    if not os.path.exists(VOCAB_PATH):
+        print(f'Vocab file not found. Downloading vocab file.')
+        vocab_url = "https://drive.usercontent.google.com/download?id=1jebwdnDyA4-9s3mCDWdO5wuNcVCChglz&export=download"
+        urllib.request.urlretrieve(vocab_url, VOCAB_PATH)
+        print(f'Vocab file downloaded to {VOCAB_PATH}')
+    else:
+        print(f'Vocab file found. Loading vocab from file.')
+
+    if not os.path.exists(MODEL_PATH):
+        print(f'Model file not found. Downloading model file.')
+        model_url = "https://drive.usercontent.google.com/download?id=1VVTfDcO65o_ZPteybCzXh4XCYV7wEgC1&export=download"
+        urllib.request.urlretrieve(model_url, MODEL_PATH)
+        print(f'Model file downloaded to {MODEL_PATH}')
+    else:
+        print(f'Model file found. Loading model from file.')
+
     DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f'Device using: {DEVICE}')
 
