@@ -24,7 +24,14 @@ pip install -r requirements.txt
 - Run the following command in terminal under the directory `vnuk-signed`:
 ```commandline
 python app.py
-```
+```  
+Input one of the following YouTube video URLs to use the prepared demo for faster use:
+> https://www.youtube.com/watch?v=MkWta2k0k_g  
+https://www.youtube.com/watch?v=m62fZr0CTqE  
+https://www.youtube.com/watch?v=oqoSKW1WWZc  
+https://www.youtube.com/watch?v=V1ah6tmNUz8  
+https://www.youtube.com/watch?v=SUt8q0EKbms  
+https://www.youtube.com/watch?v=i4YoxY9ydwQ  
 
 ## CLI pipeline: from text to sign language poses
 #### If you are interested in converting any text to sign language poses, you can use this CLI pipeline to manually input the text.
