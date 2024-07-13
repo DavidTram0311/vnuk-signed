@@ -12,7 +12,7 @@ Running the following command in terminal:
 ```commandline
 pip install -r requirements.txt
 ```
-(Checkout the `dev_notes.md` for more details on the installation process in case you encounter any issues.)
+(Checkout the `dev_notes.md` for more details on the installation process in case you encounter any issues.)  
 3. Prepare the lexicon dataset (for Swiss-German Sign Language):  
 - Download the [signsuisse lexicon dataset](https://drive.usercontent.google.com/download?id=1sVEASYo7CRQ1xfaXgPO8Mg1r4Hpux-vh&export=download)
 - Extract the downloaded files to the directory `vnuk-signed/sign_language_production/gloss_to_pose/datasets/signsuisse`

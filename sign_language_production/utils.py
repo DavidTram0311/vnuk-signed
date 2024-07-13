@@ -40,16 +40,16 @@ def resize_and_generate_gif(poses_sequence, gif_name, gif_dir="."):
 def download_dataset(dataset_name, dataset_dir="gloss_to_pose/datasets"):
     """
     Downloads a dataset zip file from a given URL and saves it to the specified directory.
-    :param dataset_dir:
-    :param dataset_name:
+    :param dataset_dir: directory to download the ZIP file
+    :param dataset_name: name of the dataset (same with the ZIP file)
     :return:
     """
     urls_dict = {
         "signsuisse": "https://drive.usercontent.google.com/download?id=1sVEASYo7CRQ1xfaXgPO8Mg1r4Hpux-vh&export=download",
-        "vietsign": ""
+        "vietsign": "" # TODO: update for Vietnamese Sign Language
     }
 
-    dataset_path = os.path.join(dataset_dir, dataset_name)
+    dataset_path = os.path.join(dataset_dir, dataset_name) # This is the path to the folder of dataset
     # Check if the dataset is ready
     if os.path.exists(dataset_path):
         print(f"Dataset {dataset_name} is already downloaded.")

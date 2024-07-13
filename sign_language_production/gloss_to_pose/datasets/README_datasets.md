@@ -1,9 +1,5 @@
 # Prepare the dataset for generating poses
 
-## SignSuisse dataset
-- For a full data preparation process, follow the Colab notebook `signsuisse_proprocessing.ipynb`.
-- If you already have the signsuisse dataset downloaded and unzipped locally, simply run `signsuisse_move_files.py`.
+Follow the Step 3 of Web App - Installation in the [project's README](https://github.com/DavidTram0311/vnuk-signed/blob/main/README.md) to download the dataset manually.  
 
-### Changes:
-The dataset from SwissUbase includes: openpose and mediapipe pose data.  
-The gloss_to_pose module uses mediapipe data structure run the script to prepare index and .pose folder for `example_mediapipe`
+For more details on the dataset preparation, refer to [our dataset repo](https://github.com/MinhHieu-Nguyen-dn/viet-sign-lexicon-dataset).

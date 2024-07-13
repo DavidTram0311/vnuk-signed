@@ -1,6 +1,5 @@
 from youtube_transcript_api import YouTubeTranscriptApi
 from sign_language_production import text_to_pose_and_gif
-import time
 
 
 def subtitle(video_id):

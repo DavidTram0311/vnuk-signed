@@ -39,8 +39,8 @@ def text_to_pose_and_gif(text_input, pose_filename, pose_dir, gif_dir, target_la
     print("Checkpoint 2 - text to gloss: DONE")
 
     # Step 3: Convert gloss to pose sequence
-    # TODO: Check if lexicon_dataset is available, if not download and place it in the correct directory
-    # download_dataset(dataset_name=lexicon_dataset)
+    # Check if lexicon_dataset is available, if not download and place it in the correct directory
+    # download_dataset(dataset_name=lexicon_dataset) # Commented out because it's not working (download error)
     poses_sequence = gloss_to_pose(glosses=glosses, lexicon_dataset=lexicon_dataset, spoken_language=target_language,
                                    signed_language=signed_language)
 

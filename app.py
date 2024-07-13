@@ -1,11 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, send_file
 import os
-import shutil
-from utils import *
+from utils import subtitle
+from utils import create_gif
 
 app = Flask(__name__)
-
-start = time.time()
 
 
 @app.route('/')

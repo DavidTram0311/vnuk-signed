@@ -47,7 +47,7 @@ def main(args):
     print("Checkpoint 2 - text to gloss: DONE")
 
     # Step 3: Convert gloss to pose sequence
-    # download_dataset(dataset_name=args.lexicon_dataset)
+    # download_dataset(dataset_name=args.lexicon_dataset) # Comment out because it is not working - download error
     poses_sequence = convert_gloss_to_pose(glosses, args.lexicon_dataset, args.target_language, args.signed_language)
 
     # Save poses sequence to a .pose file
