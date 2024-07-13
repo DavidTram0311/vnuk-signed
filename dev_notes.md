@@ -1,10 +1,12 @@
+We use PyCharm to build this project.  
+
 ### Mark folder as:
-- Source Root: `vnuk-signed`, `sign-language-production`, `text_translate`
+- Source Root: `vnuk-signed`, `sign-language-production`, `text_translate`, `text_to_gloss`, `gloss_to_pose`, `gloss_to_pose\lookup`
 - Excluded: `__pycache__`, `.idea` (follow [this instruction](https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore))  
 
 
 #### Install CUDA BEFORE creating virtual environment:  
-https://www.youtube.com/watch?v=d_jBX7OrptI&list=PLur6W2Lhl4UFHS0HTgMDfplOZ0040Lvx6
+Watch [this instruction](https://www.youtube.com/watch?v=d_jBX7OrptI&list=PLur6W2Lhl4UFHS0HTgMDfplOZ0040Lvx6) for standard guideline.
 
 
 #### Install PyTorch AFTER installing CUDA:  
@@ -31,5 +33,5 @@ pip install pose-format
 pip install simplemma
 pip install matplotlib
 ```
-Install spacy package: go to Python Packages --> search "spacy", click Install and wait for the IDE to work.  
+Install spacy package: go to Python Packages tab --> search "spacy", click Install and wait for the IDE to work.  
 
