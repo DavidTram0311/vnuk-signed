@@ -13,12 +13,25 @@ Running the following command in terminal:
 pip install -r requirements.txt
 ```
 (Checkout the `dev_notes.md` for more details on the installation process in case you encounter any issues.)
-3. Run the web app:
+3. Prepare the lexicon dataset (for Swiss-German Sign Language):  
+- Download the [signsuisse lexicon dataset](https://drive.usercontent.google.com/download?id=1sVEASYo7CRQ1xfaXgPO8Mg1r4Hpux-vh&export=download)
+- Extract the downloaded files to the directory `vnuk-signed/sign_language_production/gloss_to_pose/datasets/signsuisse`
+- The directory `signsuisse` data folder should contain:
+  - `index.csv`
+  - `de_dsgs_poses` (includes .pose files for each word/gloss)
+4. Run the web app:
 - Manually run "app.py", or
 - Run the following command in terminal under the directory `vnuk-signed`:
 ```commandline
 python app.py
-```
+```  
+Input one of the following YouTube video URLs to use the prepared demo for faster use:
+> https://www.youtube.com/watch?v=MkWta2k0k_g  
+https://www.youtube.com/watch?v=m62fZr0CTqE  
+https://www.youtube.com/watch?v=oqoSKW1WWZc  
+https://www.youtube.com/watch?v=V1ah6tmNUz8  
+https://www.youtube.com/watch?v=SUt8q0EKbms  
+https://www.youtube.com/watch?v=i4YoxY9ydwQ  
 
 ## CLI pipeline: from text to sign language poses
 #### If you are interested in converting any text to sign language poses, you can use this CLI pipeline to manually input the text.
