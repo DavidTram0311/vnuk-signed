@@ -13,7 +13,13 @@ Running the following command in terminal:
 pip install -r requirements.txt
 ```
 (Checkout the `dev_notes.md` for more details on the installation process in case you encounter any issues.)
-3. Run the web app:
+3. Prepare the lexicon dataset (for Swiss-German Sign Language):  
+- Download the [signsuisse lexicon dataset](https://drive.usercontent.google.com/download?id=1sVEASYo7CRQ1xfaXgPO8Mg1r4Hpux-vh&export=download)
+- Extract the downloaded files to the directory `vnuk-signed/sign_language_production/gloss_to_pose/datasets/signsuisse`
+- The directory `signsuisse` data folder should contain:
+  - `index.csv`
+  - `de_dsgs_poses` (includes .pose files for each word/gloss)
+4. Run the web app:
 - Manually run "app.py", or
 - Run the following command in terminal under the directory `vnuk-signed`:
 ```commandline
