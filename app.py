@@ -1,10 +1,11 @@
-from flask import Flask, render_template, request, redirect, url_for, send_file
+from flask import Flask, render_template, request, redirect, url_for, send_file, flash
 import os
 from utils import subtitle
 from utils import create_gif
+import secrets
 
 app = Flask(__name__)
-
+app.secret_key = secrets.token_urlsafe(16)
 
 @app.route('/')
 def index():
@@ -29,9 +30,17 @@ def input_form():
                 return redirect(url_for("translated", url=url))
 
             # create a pose GIF for the video subtitle string, if video id not in the folder gif
-            subtitle_string = subtitle(url)
-            create_gif(subtitle_string=subtitle_string, gif_dir=f"static/images/gif", url=url)
-            return redirect(url_for("translated", url=url))
+            success, subtitle_string= subtitle(url)
+            if success:
+                create_gif(subtitle_string=subtitle_string, gif_dir=f"static/images/gif", url=url)
+                return redirect(url_for("translated", url=url))
+            else:
+                flash("We only support video that has subtitles", "error")
+                return redirect(url_for('input_form'))
+
+            # subtitle_string = subtitle(url)
+            # create_gif(subtitle_string=subtitle_string, gif_dir=f"static/images/gif", url=url)
+            # return redirect(url_for("translated", url=url))
     return render_template('input_form.html')
 
 
