@@ -11,6 +11,13 @@
         <form class="grid" method="POST" action="#">
             <label>Input YouTube URL: <br>(must have subtitles available) </label>
             <input type="text" placeholder="Youtube URL..." id="youtube-url" name="youtube-url"/>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                      <p class="{{ category }}" style="color: red">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
             <button id="run" type="submit">Run</button>
         </form>
     </div>

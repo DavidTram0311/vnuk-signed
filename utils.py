@@ -1,4 +1,4 @@
-from youtube_transcript_api import YouTubeTranscriptApi
+from youtube_transcript_api import YouTubeTranscriptApi, NoTranscriptFound
 from sign_language_production import text_to_pose_and_gif
 
 
@@ -8,14 +8,29 @@ def subtitle(video_id):
     :param video_id: id of YouTube video
     :return: 1 string of the subtitle (full)
     """
-    transcript = YouTubeTranscriptApi.get_transcript(video_id)
-    output = ''
-    for x in transcript:
-        sentence = x['text']
-        output += f' {sentence}'
-
-    return output
-
+    langs = [
+        'af', 'ak', 'sq', 'am', 'ar', 'hy', 'as', 'ay', 'az', 'bn', 'eu', 'be', 'bho', 'bs', 'bg', 'my', 'ca',
+        'ceb', 'zh-Hans', 'zh-Hant', 'co', 'hr', 'cs', 'da', 'dv', 'nl', 'en', 'eo', 'et', 'ee', 'fil', 'fi',
+        'fr', 'gl', 'lg', 'ka', 'de', 'el', 'gn', 'gu', 'ht', 'ha', 'haw', 'iw', 'hi', 'hmn', 'hu', 'is', 'ig',
+        'id', 'ga', 'it', 'ja', 'jv', 'kn', 'kk', 'km', 'rw', 'ko', 'kri', 'ku', 'ky', 'lo', 'la', 'lv', 'ln',
+        'lt', 'lb', 'mk', 'mg', 'ms', 'ml', 'mt', 'mi', 'mr', 'mn', 'ne', 'nso', 'no', 'ny', 'or', 'om', 'ps',
+        'fa', 'pl', 'pt', 'pa', 'qu', 'ro', 'ru', 'sm', 'sa', 'gd', 'sr', 'sn', 'sd', 'si', 'sk', 'sl', 'so',
+        'st', 'es', 'su', 'sw', 'sv', 'tg', 'ta', 'tt', 'te', 'th', 'ti', 'ts', 'tr', 'tk', 'uk', 'ur', 'ug',
+        'uz', 'vi', 'cy', 'fy', 'xh', 'yi', 'yo', 'zu'
+    ]
+    # transcript = YouTubeTranscriptApi.get_transcript(video_id, languages=langs)
+    # output = ''
+    # for x in transcript:
+    #     sentence = x['text']
+    #     output += f' {sentence}'
+    # return output
+    try:
+        transcript = YouTubeTranscriptApi.get_transcript(video_id, languages=langs)
+        return True, transcript
+    except NoTranscriptFound:
+        return False, "No transcript available for this video."
+    except Exception as e:
+        return False, f"An error occurred: {str(e)}"
 
 def create_gif(subtitle_string: str, gif_dir: str, url: str):
     """
